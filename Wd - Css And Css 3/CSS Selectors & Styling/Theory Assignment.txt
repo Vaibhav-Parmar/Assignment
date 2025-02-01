@@ -1,0 +1,128 @@
+Question 1: What is a CSS selector? Provide examples of element, class, and ID selectors.
+css selector is used to access html elements or tags to provides different-different css on our web page i.e called css selector. 
+
+syntax : 
+
+<style>
+selector
+{
+property:value;
+}
+</style>    
+
+
+types of css selector :
+
+a) simple selector 
+    1) element selector or tag selector
+    2) id selector
+    3) class selector
+
+b) combinator selector 
+    1) descendent combinator selector(space)
+    2) child combinator selector(>)
+    3) next sibling combinator selector(+)
+    4) subsequent-sibling combinator selector(~)
+
+c) pseudo class selector
+d) pseudo element selector
+e) attributes selector
+f) universal selector
+g) grouping selector   
+
+Question 2: Explain the concept of CSS specificity. How do conflicts between multiple styles get resolved?
+CSS Specificity:
+CSS specificity refers to a set of rules that determines which CSS rule is applied when there are conflicting styles targeting the same element. It is a way for the browser to resolve conflicts between multiple CSS selectors that could apply to the same HTML element.
+
+When several rules are applied to an element, specificity helps determine which rule takes precedence. The more specific a CSS rule is, the higher its specificity score, and thus, the more likely it is to be applied.
+
+How Specificity Works:
+Specificity is calculated based on the types of selectors used in a rule. The browser assigns a specificity score to each CSS rule. The score is calculated using a formula based on the components of the selector.
+
+Specificity Hierarchy (Score Calculation):
+Specificity is typically represented as a four-part value: a,b,c,d
+
+a: Inline styles (if any). This is the highest specificity and has the value 1.
+b: IDs. For every id in a selector, this increases by 1.
+c: Classes, attributes, and pseudo-classes (e.g., :hover, :first-child). For every class, attribute, or pseudo-class, this increases by 1.
+d: Elements (tags) and pseudo-elements (e.g., ::before, ::after). For every tag or pseudo-element, this increases by 1.
+
+The specificity is calculated as follows:
+
+1. Inline styles: 1,0,0,0
+2. IDs: 0,1,0,0
+3. Classes/Attributes/Pseudo-classes: 0,0,1,0
+4. Elements/Pseudo-elements: 0,0,0,1
+
+The selector with the higher specificity wins in case of a conflict.
+
+Question 3: What is the difference between internal, external, and inline CSS? Discuss the
+advantages and disadvantages of each approach.
+In CSS, there are three primary ways to apply styles to HTML documents: internal CSS, external CSS, and inline CSS. Each of these approaches has its advantages and disadvantages, and they differ in terms of where and how the styles are applied.
+
+1. Internal CSS
+Definition: Internal CSS refers to styles that are defined within the <style> tag inside the <head> section of an HTML document. These styles apply only to the page in which they are defined.
+
+Advantages of Internal CSS:
+Page-specific: Styles are applied only to the current page, so you have more control over styling specific to that page.
+Easy to manage: If you only need to style one page, internal CSS is convenient because it is placed directly in the HTML document.
+No need for external file: There's no need for separate CSS files, making it simpler for small projects or quick prototypes.
+
+Disadvantages of Internal CSS:
+Not reusable: The styles are only applicable to the current page. If you want the same styles on multiple pages, you have to duplicate the CSS in each page.
+Increases page size: Embedding CSS in the HTML document increases its file size, which can negatively affect page load times.
+Less separation of concerns: Mixing content (HTML) with presentation (CSS) can make the code harder to maintain, especially as the project grows.
+
+2. External CSS
+Definition: External CSS involves defining styles in a separate .css file, which is linked to the HTML document using the <link> tag in the <head> section.
+
+Advantages of External CSS:
+Reusability: The same CSS file can be linked to multiple HTML pages, making it efficient for styling a website with many pages.
+Separation of concerns: HTML content and CSS styles are kept separate, which improves code organization and maintainability.
+Better performance: The browser caches the external CSS file, meaning it doesn't need to be reloaded every time the page is accessed, improving page load times.
+Easier to maintain: Changes to the design can be made in one place (the CSS file) and automatically apply to all pages that link to it.
+
+Disadvantages of External CSS:
+Dependency on file location: If the external CSS file is moved or renamed, the link in the HTML file must also be updated, which can break the styles.
+Initial load time: On the first visit, the browser needs to load the external CSS file, which can slightly increase the initial page load time.
+Extra HTTP request: Every external CSS file requires a separate HTTP request, which can increase load times if there are many external CSS files.
+
+3. Inline CSS
+Definition: Inline CSS refers to styles that are applied directly to individual HTML elements using the style attribute.
+
+Advantages of Inline CSS:
+Specificity: Inline styles override other CSS rules (including those from external and internal CSS), making them useful for quickly applying styles to individual elements.
+Quick styling: It is convenient for quick changes to individual elements or for adding styles to single-use elements, especially during testing or debugging.
+No need for external or internal stylesheets: Inline CSS doesn't require separate CSS files, making it a quick solution for styling very small pages.
+
+Disadvantages of Inline CSS:
+Not reusable: Inline CSS styles are tied to a specific element and cannot be reused across multiple elements or pages.
+Increases HTML size: Adding inline styles directly to HTML elements increases the size of the HTML document, which can slow down page loading if overused.
+Poor maintainability: For larger websites, using inline CSS is difficult to maintain and scale because styling information is scattered across the HTML markup.
+Mixes content with presentation: Inline CSS violates the principle of separating content (HTML) from presentation (CSS), which can lead to messy and hard-to-manage code.
+
+Differences:
+Location-
+        Internal CSS:-Inside <style> tag in <head> of HTML
+        External CSS:-In a separate .css file linked via <link>
+        Inline CSS:-Inside the style attribute of HTML tags
+
+Reusability-
+        Internal CSS:-Only applies to the current HTML document
+        External CSS:-Can be reused across multiple pages
+        Inline CSS:-Only applies to the specific element
+
+Maintainability-
+        Internal CSS:-Can be harder to maintain for large projects
+        External CSS:-Easier to maintain, as styles are separated
+        Inline CSS:-Difficult to maintain and scale
+
+Performance-
+        Internal CSS:-Increases HTML file size, no caching
+        External CSS:-Better performance due to browser caching
+        Inline CSS:-Increases HTML file size and cannot be cached
+
+Use Case-
+        Internal CSS:-For small projects or page-specific styles
+        External CSS:-For larger websites with multiple pages
+        Inline CSS:-For styling individual elements quickly or for testing

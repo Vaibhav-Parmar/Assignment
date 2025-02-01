@@ -1,0 +1,134 @@
+Question 1: Explain the difference between web-safe fonts and custom web fonts. Whymight
+you use a web-safe font over a custom font?
+
+Web-Safe Fonts vs. Custom Web Fonts
+Web-Safe Fonts: Web-safe fonts are a set of typefaces that are universally available across all major operating systems and web browsers. These fonts are pre-installed on most devices, ensuring that they will render correctly regardless of the user's system. Common examples of web-safe fonts include:
+
+Arial
+Times New Roman
+Courier New
+Georgia
+Verdana
+Characteristics of Web-Safe Fonts:
+
+Availability: They are installed on most devices, ensuring consistent rendering.
+Performance: Since they do not require additional downloads, they can lead to faster page load times.
+Simplicity: They are often simpler and more traditional in appearance, which can be beneficial for certain types of content.
+Custom Web Fonts: Custom web fonts are typefaces that are not universally available on all devices and must be loaded from a web server. These fonts can be sourced from various font libraries, such as Google Fonts, Adobe Fonts, or self-hosted font files. Custom web fonts allow designers to use unique and creative typography that aligns with their brand identity.
+
+Characteristics of Custom Web Fonts:
+
+Variety: They offer a wide range of styles, weights, and designs, allowing for more creative expression.
+Branding: Custom fonts can help establish a brand's identity and make a website stand out.
+Loading: They require additional HTTP requests to load, which can impact performance if not optimized properly.
+Reasons to Use Web-Safe Fonts Over Custom Fonts
+Performance: Web-safe fonts do not require additional downloads, which can lead to faster page load times. This is particularly important for users with slower internet connections or on mobile devices.
+
+Consistency: Since web-safe fonts are universally available, they ensure that the text appears the same across all devices and browsers. This consistency is crucial for maintaining the intended design and user experience.
+
+Simplicity: For certain types of content, such as formal documents, reports, or websites that prioritize readability and accessibility, web-safe fonts may be more appropriate. They are often easier to read and less distracting.
+
+Fallback Options: When using web-safe fonts, there is less concern about fallback options. If a custom font fails to load, the text may appear in an undesired font, which can disrupt the design. Web-safe fonts eliminate this risk.
+
+Ease of Use: Web-safe fonts are straightforward to implement and do not require additional CSS or JavaScript for loading, making them easier for developers who may not be familiar with custom font integration.
+
+Question 2: What is the font-family property in CSS? How do you apply a custom GoogleFont
+to a webpage?
+
+The font-family Property in CSS:
+The font-family property in CSS is used to specify the typeface that should be applied to an element or a group of elements on a webpage. It allows you to define one or more font names, and the browser will use the first available font from the list. If the specified font is not available, the browser will fall back to the next font in the list.
+
+Syntax
+css:
+selector {
+    font-family: "Font Name", fallback-font, generic-family;
+}
+
+Font Name: The name of the font you want to use. If the font name contains spaces, it should be enclosed in quotes.
+Fallback Font: A secondary font that will be used if the primary font is not available.
+Generic Family: A general font category (like serif, sans-serif, monospace, etc.) that serves as a last resort.
+
+Example
+css:
+body {
+    font-family: "Arial", "Helvetica", sans-serif;
+}
+In this example, the browser will first try to use Arial. If Arial is not available, it will try Helvetica, and if neither is available, it will use the default sans-serif font.
+
+Applying a Custom Google Font to a Webpage
+To apply a custom Google Font to a webpage, follow these steps:
+
+Choose a Google Font:
+Go to the Google Fonts website.
+Browse or search for the font you want to use.
+Click on the font to view its details.
+
+Select the Font Styles:
+After selecting a font, you can choose specific styles (like regular, bold, italic, etc.) that you want to include.
+
+Copy the Embed Link:
+Google Fonts will provide an embed link in the "Embed" section. Copy the <link> tag provided.
+It will look something like this:
+html:
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+Add the Link to Your HTML:
+Paste the copied <link> tag inside the <head> section of your HTML document.
+html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Google Font Example</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Hello, World!</h1>
+</body>
+</html>
+
+Apply the Font in CSS:
+Now, you can use the font-family property in your CSS to apply the Google Font to specific elements.
+css:
+body {
+    font-family: 'Roboto', sans-serif; /* Use the custom Google Font */
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif; /* Apply to h1 as well */
+    font-weight: 700; /* Use bold weight */
+}
+
+Complete Example
+Here’s a complete example of an HTML file that uses a custom Google Font:
+
+html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Google Font Example</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Apply the Google Font */
+            margin: 20px;
+        }
+
+        h1 {
+            font-weight: 700; /* Bold weight */
+        }
+
+        p {
+            font-weight: 400; /* Regular weight */
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>This is a paragraph using the Roboto font.</p>
+</body>
+</html>

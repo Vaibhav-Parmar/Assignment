@@ -1,0 +1,53 @@
+Question 1: What are media queries in CSS, and why are they important for responsive
+design?
+
+Media queries in CSS are a powerful feature that allows developers to apply different styles to a webpage based on the
+characteristics of the device or viewport displaying the content. They enable the implementation of responsive design,
+which ensures that web pages look and function well on a variety of devices, including desktops, tablets, and
+smartphones.
+
+Key Aspects of Media Queries:
+1.Syntax: Media queries use the @media rule followed by a media type and one or more expressions that check for specific
+conditions (like viewport width, height, resolution, etc.).
+
+2.Conditions: Media queries can target various features, such as:
+
+width and height of the viewport
+orientation (landscape or portrait)
+resolution (DPI or pixel density)
+aspect-ratio (width-to-height ratio)
+
+3.Breakpoints: Developers often define breakpoints in their CSS where the layout or styles change to accommodate different
+screen sizes. Common breakpoints might be at 320px, 768px, and 1024px, corresponding to mobile, tablet, and desktop
+views.
+
+Importance of Media Queries for Responsive Design:
+1.Adaptability: Media queries allow web pages to adapt to different screen sizes and resolutions, providing an optimal
+viewing experience across devices.
+
+2.User Experience: By tailoring styles to specific devices, media queries enhance usability. For example, larger touch
+targets on mobile devices improve navigation, while multi-column layouts can be used on larger screens.
+
+3.Performance: Responsive design can reduce the need for separate mobile sites, which can improve load times and reduce
+maintenance overhead.
+
+4.SEO Benefits: Search engines favor responsive designs, as they provide a consistent user experience across devices,
+which can positively impact search rankings.
+
+5.Future-Proofing: As new devices with varying screen sizes and resolutions continue to emerge, media queries provide a
+flexible way to ensure that web content remains accessible and visually appealing.
+
+Question 2: Write a basic media query that adjusts the font size of a webpage for screens
+smaller than 600px
+
+Default font size for larger screens:
+body {
+font-size: 16px;
+}
+
+Media query for screens smaller than 600px:
+@media (max-width: 600px) {
+body {
+font-size: 14px; :Adjusted font size for smaller screens
+}
+}
