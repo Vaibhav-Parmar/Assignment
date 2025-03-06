@@ -1,0 +1,192 @@
+• Question 1: What are functions in JavaScript? Explain the syntax for declaring and calling a
+function.
+    In JavaScript, functions are reusable blocks of code that perform a specific task. They allow you to encapsulate logic, making your code more organized, modular, and easier to maintain. Functions can take inputs (known as parameters), perform operations, and return outputs (known as return values).
+
+     Key Features of Functions
+
+    1. Reusability: Functions can be called multiple times throughout your code, reducing redundancy.
+    2. Parameters and Arguments: Functions can accept parameters, which are values passed to the function when it is called.
+    3. Return Values: Functions can return a value using the `return` statement, allowing you to capture the result of the function's execution.
+
+     Syntax for Declaring a Function
+
+    There are several ways to declare a function in JavaScript. Here are the most common methods:
+
+    # 1. Function Declaration
+
+    javascript
+    function functionName(parameters) {
+        // Code to be executed
+        return value; // Optional
+    }
+
+
+    Example:
+    javascript
+    function add(a, b) {
+        return a + b;
+    }
+
+
+    # 2. Function Expression
+
+    A function expression defines a function as part of a larger expression, such as an assignment to a variable.
+
+    javascript
+    const functionName = function(parameters) {
+        // Code to be executed
+        return value; // Optional
+    };
+
+
+    Example:
+    javascript
+    const multiply = function(x, y) {
+        return x * y;
+    };
+
+
+    # 3. Arrow Function (ES6)
+
+    Arrow functions provide a more concise syntax for writing function expressions. They are especially useful for writing short functions.
+
+    javascript
+    const functionName = (parameters) => {
+        // Code to be executed
+        return value; // Optional
+    };
+
+
+    Example:
+    javascript
+    const subtract = (a, b) => {
+        return a - b;
+    };
+
+
+     Calling a Function
+
+    To execute a function, you simply call it by its name followed by parentheses. If the function takes parameters, you provide the arguments inside the parentheses.
+
+    Example:
+    javascript
+    let sum = add(5, 3); // Calling the add function
+    console.log(sum); // Output: 8
+
+    let product = multiply(4, 2); // Calling the multiply function
+    console.log(product); // Output: 8
+
+    let difference = subtract(10, 4); // Calling the subtract function
+    console.log(difference); // Output: 6
+
+
+     Summary
+
+    - Functions are reusable blocks of code that perform specific tasks.
+    - You can declare functions using function declarations, function expressions, or arrow functions.
+    - Functions can accept parameters and return values.
+    - To call a function, use its name followed by parentheses, providing any necessary arguments.
+
+    Functions are a fundamental concept in JavaScript and are essential for writing clean, efficient, and maintainable code.
+
+
+• Question 2: What is the difference between a function declaration and a function
+expression?
+    In JavaScript, a function declaration and a function expression are two different ways to define functions, and they have some key differences:
+
+     Function Declaration
+    - Syntax: A function declaration uses the `function` keyword followed by the function name and a set of parentheses. It looks like this:
+      javascript
+      function myFunction() {
+          // function body
+      }
+    
+    - Hoisting: Function declarations are hoisted to the top of their containing scope. This means you can call the function before it is defined in the code:
+      javascript
+      myFunction(); // This works because of hoisting
+
+      function myFunction() {
+          console.log("Hello, World!");
+      }
+    
+
+     Function Expression
+    - Syntax: A function expression can be anonymous (without a name) or named, and it is defined as part of an expression. It can be assigned to a variable, passed as an argument, or returned from another function. Here’s an example of an anonymous function expression:
+      javascript
+      const myFunction = function() {
+          // function body
+      };
+    
+    - Hoisting: Function expressions are not hoisted in the same way as function declarations. You cannot call a function expression before it is defined:
+      javascript
+      myFunction(); // This will throw an error: myFunction is not a function
+
+      const myFunction = function() {
+          console.log("Hello, World!");
+      };
+    
+
+     Summary of Differences
+    1. Definition: Function declarations are defined with a name and can be called before they appear in the code due to hoisting. Function expressions can be anonymous or named and cannot be called before they are defined.
+    2. Hoisting: Function declarations are hoisted, while function expressions are not.
+
+    Understanding these differences is important for writing clear and effective JavaScript code.
+
+• Question 3: Discuss the concept of parameters and return values in functions.
+    In programming, particularly in the context of functions, parameters and return values are fundamental concepts that allow functions to accept input and produce output. Here’s a detailed discussion of both:
+
+     Parameters
+
+    Definition: Parameters are variables that are defined in a function's declaration or definition. They act as placeholders for the values (arguments) that will be passed to the function when it is called.
+
+    Purpose: Parameters allow functions to be more flexible and reusable by enabling them to operate on different inputs. This means you can use the same function to perform operations on various data without rewriting the function.
+
+    Syntax: In JavaScript, parameters are specified within the parentheses of a function declaration. For example:
+    javascript
+    function add(a, b) {
+        return a + b;
+    }
+    
+    In this example, `a` and `b` are parameters of the `add` function.
+
+    Calling a Function with Arguments: When you call a function, you provide values known as arguments, which are assigned to the corresponding parameters:
+    javascript
+    let result = add(5, 3); // Here, 5 is assigned to 'a' and 3 to 'b'
+    console.log(result); // Outputs: 8
+    
+
+     Return Values
+
+    Definition: A return value is the value that a function produces and sends back to the caller when it completes its execution. The `return` statement is used to specify what value should be returned.
+
+    Purpose: Return values allow functions to output results that can be used elsewhere in the program. This is essential for performing calculations, processing data, or generating results based on input.
+
+    Syntax: The `return` statement is used within the function body to specify the value to be returned. For example:
+    javascript
+    function multiply(x, y) {
+        return x * y;
+    }
+    
+    In this example, the `multiply` function returns the product of `x` and `y`.
+
+    Using Return Values: When a function returns a value, you can capture that value in a variable or use it directly:
+    javascript
+    let product = multiply(4, 5); // product will be 20
+    console.log(product); // Outputs: 20
+
+    console.log(multiply(2, 3)); // Outputs: 6 directly
+    
+
+     Summary
+
+    - Parameters: 
+      - Serve as placeholders for values that are passed into a function.
+      - Allow functions to accept input and operate on different data.
+      - Are defined in the function declaration and can be multiple.
+
+    - Return Values: 
+      - Are the output produced by a function after it has executed.
+      - Allow functions to send results back to the caller.
+      - Are specified using the `return` statement.
+
+    Together, parameters and return values make functions powerful tools for abstraction, code reuse, and modular programming, enabling developers to write cleaner and more maintainable code.

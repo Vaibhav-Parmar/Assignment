@@ -1,0 +1,10 @@
+<script>
+    // Task 3: Do-while loop to ask for input until a number greater than 10 is entered
+        let userInput;
+        do {
+            userInput = prompt("Please enter a number greater than 10:");
+            userInput = Number(userInput); // Convert the input to a number
+        } while (userInput <= 10);
+
+        console.log("Thank you! You entered: " + userInput);
+</script>

@@ -1,0 +1,71 @@
+• Question 1: What are the different types of operators in JavaScript? Explain with examples.
+    • Arithmetic operators
+    • Assignment operators
+    • Comparison operators
+    • Logical operators
+
+    1. Arithmetic Operators
+    Arithmetic operators are used to perform mathematical operations on numbers.
+
+    let a = 10;
+    let b = 5;
+
+    console.log(a + b); // Output: 15
+    console.log(a - b); // Output: 5
+    console.log(a * b); // Output: 50
+    console.log(a / b); // Output: 2
+    console.log(a % b); // Output: 0
+    console.log(2 ** 3); // Output: 8
+
+    2. Assignment Operators
+    Assignment operators are used to assign values to variables. The most common assignment operator is the equal sign (=), but there are also compound assignment operators.
+
+    let x = 10;
+    x += 5; // Equivalent to x = x + 5
+    console.log(x); // Output: 15
+
+    x *= 2; // Equivalent to x = x * 2
+    console.log(x); // Output: 30
+
+    3. Comparison Operators
+    Comparison operators are used to compare two values and return a boolean result (true or false).
+
+    console.log(5 == '5');  // Output: true (loose equality)
+    console.log(5 === '5'); // Output: false (strict equality)
+    console.log(5 != '5');  // Output: false (loose inequality)
+    console.log(5 !== '5'); // Output: true (strict inequality)
+    console.log(5 > 3);     // Output: true
+    console.log(5 < 3);     // Output: false
+
+    4. Logical Operators
+    Logical operators are used to combine or invert boolean values.
+
+
+Question 2: What is the difference between == and === in JavaScript?
+    1. Type of Comparison
+    == (Loose Equality):
+
+    The == operator checks for equality of values but does not consider the data type. If the values being compared are of different types, JavaScript will attempt to convert one or both of the values to a common type before making the comparison. This process is known as type coercion.
+
+    === (Strict Equality):
+
+    The === operator checks for both value and type equality. It does not perform any type conversion. If the values being compared are of different types, the comparison will return false.
+
+    2. Examples
+
+    Using == (Loose Equality):
+    console.log(5 == '5');      // Output: true (string '5' is coerced to number 5)
+    console.log(null == undefined); // Output: true (both are considered equal)
+    console.log(0 == false);    // Output: true (0 is coerced to false)
+    console.log('' == false);   // Output: true (empty string is coerced to false)
+
+    Using === (Strict Equality):
+    console.log(5 === '5');     // Output: false (different types: number vs. string)
+    console.log(null === undefined); // Output: false (different types)
+    console.log(0 === false);    // Output: false (different types: number vs. boolean)
+    console.log('' === false);   // Output: false (different types: string vs. boolean)
+
+    3. Best Practices
+    Use === for Comparisons: It is generally recommended to use === (strict equality) in JavaScript to avoid unexpected results due to type coercion. This helps ensure that both the value and type are the same, leading to more predictable and reliable code.
+    
+    Use == with Caution: While == can be useful in certain scenarios where type coercion is desired, it can lead to confusion and bugs if not used carefully. It is often better to explicitly convert values to the desired type before comparison.

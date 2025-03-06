@@ -1,0 +1,195 @@
+• Question 1: Explain the different types of loops in JavaScript (for, while, do-while). Provide abasic
+example of each.
+    In JavaScript, loops are used to execute a block of code repeatedly until a specified condition is met. There are several types of loops, but the most commonly used are `for`, `while`, and `do-while` loops. Below is an explanation of each type of loop along with basic examples.
+
+     1. For Loop
+
+    The `for` loop is used when the number of iterations is known beforehand. It consists of three parts: initialization, condition, and increment/decrement.
+
+    # Syntax
+
+    javascript
+    for (initialization; condition; increment/decrement) {
+        // Code to be executed
+    }
+
+
+    # Example
+
+    javascript
+    // Example of a for loop
+    for (let i = 0; i < 5; i++) {
+        console.log("Iteration: " + i);
+    }
+
+
+    Explanation:
+    - The loop initializes `i` to `0`.
+    - It checks the condition `i < 5`. If true, it executes the code inside the loop.
+    - After each iteration, `i` is incremented by `1`.
+    - The output will be:
+
+    Iteration: 0
+    Iteration: 1
+    Iteration: 2
+    Iteration: 3
+    Iteration: 4
+
+
+     2. While Loop
+
+    The `while` loop is used when the number of iterations is not known beforehand and depends on a condition. The loop continues as long as the condition evaluates to `true`.
+
+    # Syntax
+
+    javascript
+    while (condition) {
+        // Code to be executed
+    }
+
+
+    # Example
+
+    javascript
+    // Example of a while loop
+    let j = 0;
+    while (j < 5) {
+        console.log("Iteration: " + j);
+        j++; // Increment j
+    }
+
+
+    Explanation:
+    - The loop checks the condition `j < 5`. If true, it executes the code inside the loop.
+    - After each iteration, `j` is incremented by `1`.
+    - The output will be:
+
+    Iteration: 0
+    Iteration: 1
+    Iteration: 2
+    Iteration: 3
+    Iteration: 4
+
+
+     3. Do-While Loop
+
+    The `do-while` loop is similar to the `while` loop, but it guarantees that the code block will be executed at least once, even if the condition is false. This is because the condition is checked after the code block is executed.
+
+    # Syntax
+
+    javascript
+    do {
+        // Code to be executed
+    } while (condition);
+
+
+    # Example
+
+    javascript
+    // Example of a do-while loop
+    let k = 0;
+    do {
+        console.log("Iteration: " + k);
+        k++; // Increment k
+    } while (k < 5);
+
+
+    Explanation:
+    - The code inside the `do` block is executed first.
+    - After executing the code, the condition `k < 5` is checked. If true, the loop continues.
+    - The output will be:
+
+    Iteration: 0
+    Iteration: 1
+    Iteration: 2
+    Iteration: 3
+    Iteration: 4
+
+
+     Summary
+
+    - For Loop: Best used when the number of iterations is known. It consists of initialization, condition, and increment/decrement in one line.
+    - While Loop: Best used when the number of iterations is not known and depends on a condition. The condition is checked before each iteration.
+    - Do-While Loop: Similar to the while loop, but guarantees that the code block will execute at least once. The condition is checked after the code block.
+
+    These loops provide flexibility in controlling the flow of your JavaScript programs, allowing you to repeat actions as needed based on conditions.
+
+
+• Question 2: What is the difference between a while loop and a do-while loop?
+    The primary difference between a while loop and a do-while loop in JavaScript lies in when the condition is evaluated and how many times the loop body is guaranteed to execute. Here’s a detailed comparison:
+
+     1. Condition Evaluation
+
+    - While Loop:
+      - The condition is evaluated before the execution of the loop body. If the condition is `false` at the start, the loop body will not execute at all.
+    
+      Syntax:
+      javascript
+      while (condition) {
+          // Code to be executed
+      }
+    
+
+    - Do-While Loop:
+      - The condition is evaluated after the execution of the loop body. This means that the loop body will execute at least once, regardless of whether the condition is `true` or `false` at the start.
+    
+      Syntax:
+      javascript
+      do {
+          // Code to be executed
+      } while (condition);
+    
+
+     2. Execution Guarantee
+
+    - While Loop:
+      - There is no guarantee that the loop body will execute even once. If the condition is `false` from the beginning, the loop will be skipped entirely.
+
+    - Do-While Loop:
+      - The loop body is guaranteed to execute at least once, even if the condition is `false` after the first execution.
+
+     3. Use Cases
+
+    - While Loop:
+      - Use a while loop when you want to repeat a block of code as long as a certain condition is true, and you are not sure if the loop will need to run at all.
+
+    - Do-While Loop:
+      - Use a do-while loop when you want to ensure that the loop body executes at least once, such as when prompting a user for input and you want to validate that input.
+
+     Example Comparison
+
+    # While Loop Example
+
+    javascript
+    let count = 0;
+
+    while (count < 0) {
+        console.log("This will not be printed.");
+        count++;
+    }
+
+    Output: (No output, as the condition is false from the start)
+
+    # Do-While Loop Example
+
+    javascript
+    let count = 0;
+
+    do {
+        console.log("This will be printed at least once.");
+        count++;
+    } while (count < 0);
+
+    Output: 
+
+    This will be printed at least once.
+
+
+     Summary
+
+    - While Loop: Executes the loop body only if the condition is true at the start. It may not execute at all if the condition is false.
+    - Do-While Loop: Executes the loop body at least once, regardless of the condition, as the condition is checked after the loop body executes.
+
+    Understanding these differences helps you choose the appropriate loop structure based on the specific requirements of your code.
+
+    

@@ -1,0 +1,140 @@
+• Question 1: What are JavaScript events? Explain the role of event listeners.
+     What are JavaScript Events?
+
+    JavaScript events are actions or occurrences that happen in the browser, which can be detected and responded to by JavaScript code. Events can be triggered by user interactions (like clicks, key presses, or mouse movements), browser actions (like loading a page or resizing a window), or other sources (like timers or network requests).
+
+    Common types of events include:
+    - Mouse Events: `click`, `dblclick`, `mouseover`, `mouseout`, `mousemove`, etc.
+    - Keyboard Events: `keydown`, `keyup`, `keypress`.
+    - Form Events: `submit`, `change`, `focus`, `blur`.
+    - Window Events: `load`, `resize`, `scroll`, `unload`.
+
+     Role of Event Listeners
+
+    An event listener is a function that waits for a specific event to occur on a particular element and executes a defined action in response. Event listeners are essential for making web pages interactive and responsive to user actions.
+
+    # How Event Listeners Work:
+
+    1. Attaching an Event Listener: You can attach an event listener to an HTML element using JavaScript. This is typically done using the `addEventListener()` method, which takes two main arguments: the event type and the callback function to be executed when the event occurs.
+
+       Syntax:
+       javascript
+       element.addEventListener(eventType, callbackFunction);
+       
+
+    2. Callback Function: The callback function is executed when the specified event occurs. This function can contain any code you want to run in response to the event.
+
+    3. Removing an Event Listener: You can also remove an event listener using the `removeEventListener()` method if you no longer want to listen for that event.
+
+    # Example of Using Event Listeners
+
+    Here’s a simple example that demonstrates how to use an event listener to respond to a button click:
+
+    html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event Listener Example</title>
+    </head>
+    <body>
+        <button id="myButton">Click Me!</button>
+        <p id="message"></p>
+
+        <script>
+            // Select the button and message paragraph
+            const button = document.getElementById('myButton');
+            const message = document.getElementById('message');
+
+            // Define the callback function
+            function showMessage() {
+                message.textContent = "Button was clicked!";
+            }
+
+            // Attach the event listener to the button
+            button.addEventListener('click', showMessage);
+        </script>
+    </body>
+    </html>
+    
+
+     Explanation of the Example:
+    - HTML Structure: The example includes a button and a paragraph element.
+    - Event Listener: The `addEventListener()` method is used to attach a click event listener to the button. When the button is clicked, the `showMessage` function is executed.
+    - Callback Function: The `showMessage` function updates the text content of the paragraph to indicate that the button was clicked.
+
+     Summary
+
+    - JavaScript Events: Events are actions or occurrences that can be detected and responded to in the browser.
+    - Event Listeners: Event listeners are functions that wait for specific events to occur on elements and execute code in response. They are crucial for creating interactive web applications and enhancing user experience. 
+
+    By using event listeners, developers can create dynamic and responsive web pages that react to user input and other events.
+
+
+• Question 2: How does the addEventListener() method work in JavaScript? Provide an
+example.
+    The `addEventListener()` method in JavaScript is used to attach an event handler (also known as an event listener) to a specified element. This method allows you to listen for specific events (like clicks, key presses, mouse movements, etc.) and execute a callback function when that event occurs. 
+
+     How `addEventListener()` Works
+
+    Syntax:
+    javascript
+    element.addEventListener(eventType, callbackFunction, useCapture);
+    
+
+    - `element`: The DOM element to which you want to attach the event listener.
+    - `eventType`: A string representing the type of event to listen for (e.g., `"click"`, `"keydown"`, `"mouseover"`).
+    - `callbackFunction`: The function that will be called when the event occurs. This function can be defined inline or as a separate function.
+    - `useCapture` (optional): A boolean value that indicates whether to use event bubbling or capturing. The default is `false`, which means the event will be handled in the bubbling phase.
+
+     Example of `addEventListener()`
+
+    Here’s a simple example that demonstrates how to use `addEventListener()` to respond to a button click:
+
+    html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>addEventListener Example</title>
+    </head>
+    <body>
+        <button id="myButton">Click Me!</button>
+        <p id="message"></p>
+
+        <script>
+            // Select the button and message paragraph
+            const button = document.getElementById('myButton');
+            const message = document.getElementById('message');
+
+            // Define the callback function
+            function showMessage() {
+                message.textContent = "Button was clicked!";
+            }
+
+            // Attach the event listener to the button
+            button.addEventListener('click', showMessage);
+        </script>
+    </body>
+    </html>
+    
+
+     Explanation of the Example:
+
+    1. HTML Structure: The example includes a button with the ID `myButton` and a paragraph with the ID `message`.
+
+    2. Selecting Elements: In the JavaScript code, we use `document.getElementById()` to select the button and the paragraph.
+
+    3. Defining the Callback Function: The `showMessage` function is defined to update the text content of the paragraph when the button is clicked.
+
+    4. Attaching the Event Listener: The `addEventListener()` method is called on the button element. It listens for the `"click"` event and specifies the `showMessage` function as the callback to be executed when the button is clicked.
+
+    5. User  Interaction: When the user clicks the button, the `showMessage` function is executed, and the text "Button was clicked!" is displayed in the paragraph.
+
+     Summary
+
+    - The `addEventListener()` method is a powerful way to handle events in JavaScript, allowing you to create interactive web applications.
+    - It enables you to specify the type of event to listen for and the function to execute when that event occurs.
+    - This method supports multiple event listeners for the same event type on the same element, providing flexibility in handling user interactions.

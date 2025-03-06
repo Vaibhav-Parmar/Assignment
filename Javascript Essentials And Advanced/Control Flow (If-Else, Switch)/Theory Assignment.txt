@@ -1,0 +1,200 @@
+• Question 1: What is control flow in JavaScript? Explain how if-else statements work withan
+example.
+    Control flow in JavaScript refers to the order in which individual statements, instructions, or function calls are executed or evaluated in a program. Control flow is essential for making decisions in code, allowing the program to execute different paths based on certain conditions.
+
+    Types of Control Flow
+    JavaScript provides several control flow structures, including:
+
+    Conditional Statements: These allow the program to execute certain blocks of code based on specific conditions. The most common conditional statements are if, else if, and else.
+    Loops: These allow the program to execute a block of code multiple times. Common loop structures include for, while, and do...while.
+    Switch Statements: These provide a way to execute different parts of code based on the value of a variable.
+
+    If-Else Statements
+    The if-else statement is a fundamental control flow structure that allows you to execute a block of code based on whether a specified condition evaluates to true or false.
+
+    Syntax
+    javascript
+    if (condition) {
+        // Code to execute if the condition is true
+    } else {
+        // Code to execute if the condition is false
+    }
+
+    You can also use else if to check multiple conditions:
+
+    javascript
+    if (condition1) {
+        // Code to execute if condition1 is true
+    } else if (condition2) {
+        // Code to execute if condition2 is true
+    } else {
+        // Code to execute if neither condition1 nor condition2 is true
+    }
+
+    Example of If-Else Statements
+    Here’s a simple example that demonstrates how if-else statements work. In this example, we will check a person's age and determine if they are eligible to vote.
+
+    javascript
+    let age = 18;
+
+    if (age >= 18) {
+        console.log("You are eligible to vote.");
+    } else {
+        console.log("You are not eligible to vote.");
+    }
+
+    Explanation of the Example:
+    Variable Declaration: We declare a variable age and assign it the value 18.
+    If Statement: The if statement checks whether the condition age >= 18 is true.
+        If the condition is true (which it is in this case), the code inside the first block executes, and the message "You are eligible to vote." is logged to the console.
+    Else Statement: If the condition were false (for example, if age were 16), the code inside the else block would execute, logging "You are not eligible to vote." to the console.
+    
+    Example with Else If
+    Here’s a more complex example that uses if, else if, and else to categorize a person's age:
+
+    javascript
+    let age = 20;
+
+    if (age < 13) {
+        console.log("You are a child.");
+    } else if (age < 20) {
+        console.log("You are a teenager.");
+    } else {
+        console.log("You are an adult.");
+    }
+
+    Explanation of the Example:
+    Variable Declaration: We declare a variable age and assign it the value 20.
+    If Statement: The first if checks if age < 13. Since 20 is not less than 13, this block is skipped.
+    Else If Statement: The else if checks if age < 20. Since 20 is not less than 20, this block is also skipped.
+    Else Statement: Since neither of the previous conditions were true, the code inside the else block executes, logging "You are an adult." to the console.
+
+
+• Question 2: Describe how switch statements work in JavaScript. When should you use a
+switch statement instead of if-else?
+     Switch Statements in JavaScript
+
+A switch statement in JavaScript is a control flow statement that allows you to execute different blocks of code based on the value of a variable or expression. It is often used as an alternative to multiple `if-else` statements when you need to compare the same variable against different values.
+
+# Syntax
+
+The basic syntax of a switch statement is as follows:
+
+javascript
+switch (expression) {
+    case value1:
+        // Code to execute if expression === value1
+        break;
+    case value2:
+        // Code to execute if expression === value2
+        break;
+    // Add more cases as needed
+    default:
+        // Code to execute if none of the cases match
+}
+
+
+- `expression`: The value or expression that you want to evaluate.
+- `case value`: Each case represents a possible value for the expression. If the expression matches a case, the code block associated with that case will execute.
+- `break`: This statement is used to exit the switch block. If omitted, the program will continue executing the subsequent cases (this is known as "fall-through").
+- `default`: This is an optional case that will execute if none of the specified cases match the expression.
+
+ Example of a Switch Statement
+
+Here’s an example that demonstrates how a switch statement works. In this example, we will determine the day of the week based on a number:
+
+javascript
+let day = 3; // Let's say 1 = Sunday, 2 = Monday, ..., 7 = Saturday
+
+switch (day) {
+    case 1:
+        console.log("Sunday");
+        break;
+    case 2:
+        console.log("Monday");
+        break;
+    case 3:
+        console.log("Tuesday");
+        break;
+    case 4:
+        console.log("Wednesday");
+        break;
+    case 5:
+        console.log("Thursday");
+        break;
+    case 6:
+        console.log("Friday");
+        break;
+    case 7:
+        console.log("Saturday");
+        break;
+    default:
+        console.log("Invalid day");
+}
+
+
+# Explanation of the Example
+
+1. Variable Declaration: We declare a variable `day` and assign it the value `3`.
+2. Switch Statement: The switch statement evaluates the value of `day`.
+3. Case Matching: It checks each case to see if it matches the value of `day`. In this case, `day` matches `case 3`, so the code inside that case executes, logging "Tuesday" to the console.
+4. Break Statement: The `break` statement prevents the execution from falling through to the next case.
+
+ When to Use a Switch Statement Instead of If-Else
+
+You should consider using a switch statement instead of if-else statements in the following scenarios:
+
+1. Multiple Conditions on the Same Variable: When you need to compare the same variable against multiple values, a switch statement can be more concise and easier to read than multiple if-else statements.
+
+   Example:
+   javascript
+   // Using if-else
+   if (day === 1) {
+       console.log("Sunday");
+   } else if (day === 2) {
+       console.log("Monday");
+   } else if (day === 3) {
+       console.log("Tuesday");
+   }
+   // ... and so on
+
+   // Using switch
+   switch (day) {
+       case 1:
+           console.log("Sunday");
+           break;
+       case 2:
+           console.log("Monday");
+           break;
+       case 3:
+           console.log("Tuesday");
+           break;
+       // ... and so on
+   }
+   
+
+2. Readability: Switch statements can improve the readability of your code when dealing with many conditions, making it easier to understand the flow of logic.
+
+3. Fall-Through Behavior: If you want to execute the same code for multiple cases, you can omit the `break` statement, allowing for fall-through behavior. This can be useful in certain scenarios.
+
+   Example:
+   javascript
+   switch (fruit) {
+       case "apple":
+       case "banana":
+           console.log("This is a fruit.");
+           break;
+       case "carrot":
+           console.log("This is a vegetable.");
+           break;
+       default:
+           console.log("Unknown item.");
+   }
+   
+
+ Summary
+
+- A switch statement is a control flow statement that allows you to execute different blocks of code based on the value of an expression.
+- It is particularly useful when you need to compare the same variable against multiple values.
+- Switch statements can enhance code readability and provide a clear structure for handling multiple conditions.
+- Use switch statements when you have many conditions based on the same variable, and prefer if-else statements for more complex conditions or when evaluating different variables.

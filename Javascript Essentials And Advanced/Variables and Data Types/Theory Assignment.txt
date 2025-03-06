@@ -1,0 +1,235 @@
+• Question 1: What are variables in JavaScript? How do you declare a variable using var, let,and
+const?
+
+    In JavaScript, variables are used to store data values. They act as containers for data that can be referenced and manipulated throughout your code. Variables can hold different types of data, including numbers, strings, objects, arrays, and more.
+
+    Declaring Variables in JavaScript
+    JavaScript provides three keywords to declare variables: var, let, and const. Each has its own scope and behavior.
+
+    1. var
+        Scope: var is function-scoped or globally-scoped. If declared inside a function, it is only accessible within that function. If declared outside any function, it is accessible globally.
+
+        Hoisting: Variables declared with var are hoisted to the top of their scope, meaning they can be referenced before their declaration (though they will be undefined until the line of declaration is executed).
+
+        Re-declaration: You can re-declare a variable using var within the same scope.
+
+    2. let
+        Scope: let is block-scoped, meaning it is only accessible within the block (enclosed by {}) in which it is defined. This makes let more predictable in terms of scope compared to var.
+
+        Hoisting: Variables declared with let are also hoisted, but they cannot be accessed before their declaration (this is known as the "temporal dead zone").
+
+        Re-declaration: You cannot re-declare a variable using let in the same scope.
+
+    3. const
+        Scope: const is also block-scoped, similar to let.
+
+        Hoisting: Like let, const variables are hoisted but cannot be accessed before their declaration.
+
+        Re-declaration: You cannot re-declare a variable using const in the same scope.
+
+        Immutability: Variables declared with const must be initialized at the time of declaration and cannot be reassigned. However, if the variable holds an object or an array, the contents of that object or array can still be modified.
+
+    Summary
+    var: Function-scoped or globally-scoped, hoisted, can be re-declared.
+    let: Block-scoped, hoisted but not accessible before declaration, cannot be re-declared.
+    const: Block-scoped, hoisted but not accessible before declaration, must be initialized at declaration, cannot be re-declared or reassigned (but can modify object properties).
+
+
+Question 2: Explain the different data types in JavaScript. Provide examples for each.
+    JavaScript has several built-in data types that can be categorized into two main groups: primitive data types and reference data types. Here’s a detailed explanation of each data type along with examples:
+
+1. Primitive Data Types
+Primitive data types are the most basic data types in JavaScript. They are immutable (cannot be changed) and are compared by their value.
+
+a. String
+A string is a sequence of characters used to represent text. Strings can be enclosed in single quotes, double quotes, or backticks (for template literals).
+
+Example:
+
+javascript
+Run
+Copy code
+let name = "Alice";
+let greeting = 'Hello, ' + name + '!'; // Concatenation
+let templateLiteral = `Welcome, ${name}!`; // Template literal
+console.log(greeting); // Output: Hello, Alice!
+console.log(templateLiteral); // Output: Welcome, Alice!
+
+b. Number
+A number can be an integer or a floating-point value. JavaScript does not differentiate between different types of numbers.
+
+Example:
+
+javascript
+Run
+Copy code
+let age = 30; // Integer
+let price = 19.99; // Floating-point
+console.log(age); // Output: 30
+console.log(price); // Output: 19.99
+
+c. Boolean
+A boolean represents a logical entity and can have two values: true or false.
+
+Example:
+
+javascript
+Run
+Copy code
+let isStudent = true;
+let hasGraduated = false;
+console.log(isStudent); // Output: true
+console.log(hasGraduated); // Output: false
+
+d. Undefined
+A variable that has been declared but has not yet been assigned a value is of type undefined.
+
+Example:
+
+javascript
+Run
+Copy code
+let x;
+console.log(x); // Output: undefined
+
+e. Null
+null is an intentional absence of any object value. It is often used to indicate that a variable should be empty.
+
+Example:
+
+javascript
+Run
+Copy code
+let y = null;
+console.log(y); // Output: null
+
+f. Symbol (ES6)
+A symbol is a unique and immutable primitive value that can be used as the key of an object property. Symbols are often used to create private object properties.
+
+Example:
+
+javascript
+Run
+Copy code
+const uniqueId = Symbol('id');
+console.log(uniqueId); // Output: Symbol(id)
+
+g. BigInt (ES11)
+BigInt is a numeric data type that can represent integers with arbitrary precision. It is useful for working with large integers.
+
+Example:
+
+javascript
+Run
+Copy code
+const bigNumber = BigInt(1234567890123456789012345678901234567890);
+console.log(bigNumber); // Output: 1234567890123456789012345678901234567890n
+
+
+2. Reference Data Types
+Reference data types are more complex and can hold collections of values or more complex entities. They are mutable and are compared by reference.
+
+a. Object
+An object is a collection of key-value pairs. Objects can store multiple values of different data types.
+
+Example:
+
+javascript
+Run
+Copy code
+let person = {
+    name: "Alice",
+    age: 30,
+    isStudent: true
+};
+console.log(person.name); // Output: Alice
+console.log(person['age']); // Output: 30
+
+b. Array
+An array is a special type of object that is used to store ordered collections of values. Arrays can hold values of any data type.
+
+Example:
+
+javascript
+Run
+Copy code
+let fruits = ["apple", "banana", "cherry"];
+console.log(fruits[0]); // Output: apple
+console.log(fruits.length); // Output: 3
+
+c. Function
+Functions in JavaScript are also objects. They can be assigned to variables, passed as arguments, and returned from other functions.
+
+Example:
+
+javascript
+Run
+Copy code
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+console.log(greet("Alice")); // Output: Hello, Alice!
+
+Summary of Data Types
+
+Primitive Data Types:
+
+String: Represents text.
+Number: Represents numeric values.
+Boolean: Represents true/false values.
+Undefined: Represents a variable that has been declared but not assigned a value.
+Null: Represents an intentional absence of any value.
+Symbol: Represents a unique identifier.
+BigInt: Represents large integers.
+
+Reference Data Types:
+
+Object: A collection of key-value pairs.
+Array: An ordered collection of values.
+Function: A callable object that can perform actions.
+
+
+Question 3: What is the difference between undefined and null in JavaScript?
+    1. Definition
+
+    undefined:
+    undefined is a primitive value that indicates that a variable has been declared but has not yet been assigned a value. It is the default value of uninitialized variables.
+    It can also be the result of a function that does not explicitly return a value.
+
+    null:
+    null is a primitive value that represents the intentional absence of any object value. It is often used to indicate that a variable should be empty or that an object is not currently assigned.
+    It is explicitly assigned to a variable to indicate that it has no value.
+
+    2. Type
+    undefined:
+    The type of undefined is undefined.
+    You can check the type using the typeof operator
+
+    null:
+    The type of null is actually object, which is a well-known quirk in JavaScript.
+
+    3. Usage
+    undefined:
+    Automatically assigned to variables that are declared but not initialized.
+    Returned by functions that do not have a return statement.
+    Used to indicate that a property does not exist in an object.
+
+    null:
+    Explicitly assigned to variables to indicate that they are empty or have no value.
+    Often used in APIs and data structures to signify that a value is intentionally absent.
+
+    4. Comparison
+    When using the equality operator (==), null and undefined are considered equal
+
+    However, when using the strict equality operator (===), they are not considered equal because they are of different types
+
+    Summary
+    undefined:
+    Indicates that a variable has been declared but not assigned a value.
+    Type is undefined.
+    Automatically assigned by JavaScript.
+
+    null:
+    Represents the intentional absence of any value.
+    Type is object.
+    Explicitly assigned to indicate that a variable should be empty.

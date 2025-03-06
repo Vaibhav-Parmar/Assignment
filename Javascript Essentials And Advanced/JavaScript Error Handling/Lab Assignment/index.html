@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Division by Zero Error Handling</title>
+</head>
+
+<body>
+
+    <h1>Division by Zero Example</h1>
+    <p id="result"></p>
+
+    <script>
+        function divideNumbers(a, b) {
+            try {
+                // Check if the divisor is zero
+                if (b === 0) {
+                    throw new Error("Cannot divide by zero!"); // Throw an error if b is zero
+                }
+                const result = a / b; // Perform the division
+                return result; // Return the result
+            } catch (error) {
+                // Handle the error
+                return error.message; // Return the error message
+            }
+        }
+
+        // Example usage
+        const numerator = 10;
+        const denominator = 0; // Change this to a non-zero value to see the result
+        const output = divideNumbers(numerator, denominator);
+
+        // Display the result or error message
+        document.getElementById('result').textContent = output;
+    </script>
+
+</body>
+
+</html>
