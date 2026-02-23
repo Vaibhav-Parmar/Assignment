@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSwap - Exchange Skills, Grow Together</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+        <p>Loading SkillSwap...</p>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🔄</span>
+                <span class="logo-text">SkillSwap</span>
+            </a>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search skills or teachers...">
+                <button class="search-btn" id="searchBtn">🔍</button>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#skills">Browse Skills</a></li>
+                <li><a href="#testimonials">Stories</a></li>
+                <li><a href="#" id="favoritesLink">❤️ Favorites</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+                    🌙
+                </button>
+                <button class="btn btn-primary" id="loginBtn">Login</button>
+                <button class="btn btn-outline" id="signupBtn">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Exchange Skills, <span class="highlight">Grow Together</span></h1>
+            <p class="hero-subtitle">Don't pay for lessons - swap your knowledge! Teach what you know, learn what you love. Connect with a community of skill exchangers.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary btn-lg" id="startSwappingBtn">Start Swapping</button>
+                <button class="btn btn-outline btn-lg">Watch Demo</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">8,500+</span>
+                    <span class="stat-label">Active Swappers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">2,000+</span>
+                    <span class="stat-label">Skills Available</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">15,000+</span>
+                    <span class="stat-label">Swaps Completed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How SkillSwap Works</h2>
+                <p class="section-subtitle">Exchange your knowledge in three simple steps</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon">🎯</div>
+                    <h3>List Your Skills</h3>
+                    <p>What can you teach? Add your skills - from guitar playing to coding, cooking to photography. Everyone has something valuable to share.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">🔍</div>
+                    <h3>Find Your Match</h3>
+                    <p>Browse thousands of skills. Find someone who wants to learn what you teach, and offers what you want to learn.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">🤝</div>
+                    <h3>Start Swapping</h3>
+                    <p>Connect and schedule your skill exchange. Learn new things without spending a single rupee!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Popular Skills to Swap</h2>
+                <p class="section-subtitle">Discover skills from our amazing community</p>
+            </div>
+            
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="music">Music</button>
+                <button class="filter-btn" data-category="tech">Technology</button>
+                <button class="filter-btn" data-category="cooking">Cooking</button>
+                <button class="filter-btn" data-category="art">Art & Design</button>
+                <button class="filter-btn" data-category="fitness">Fitness</button>
+                <button class="filter-btn" data-category="language">Languages</button>
+            </div>
+
+            <div class="skills-grid" id="skillsGrid">
+                <!-- Skills will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="section why-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose SkillSwap?</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Save Money</h3>
+                    <p>Learn expensive skills for free by teaching what you know. No courses, no fees!</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Global Community</h3>
+                    <p>Connect with learners and teachers from around the world. Expand your horizons!</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Verified Reviews</h3>
+                    <p>All swaps are reviewed. Build your reputation and swap with confidence.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Learn & Teach</h3>
+                    <p>Both sides benefit. Improve your teaching skills while learning new things.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="section-subtitle">See how SkillSwap has helped people</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"I wanted to learn guitar for years but lessons were too expensive. On SkillSwap, I taught coding to a musician in exchange for guitar lessons. Now I can play my favorite songs!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍💻</div>
+                        <div class="author-info">
+                            <h4>Alex Chen</h4>
+                            <span>Swapped: Coding → Guitar</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As a retired chef, I wanted to share my cooking knowledge. I learned photography from a young student. This platform brought joy back into my life!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍🍳</div>
+                        <div class="author-info">
+                            <h4>Maria Rodriguez</h4>
+                            <span>Swapped: Cooking → Photography</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"I learned fluent English from a teacher in exchange for helping her with website design. The flexibility is amazing - we schedule sessions that work for both of us."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍🎨</div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <span>Swapped: Web Design → English</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-shapes">
+            <div class="cta-shape shape-1"></div>
+            <div class="cta-shape shape-2"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Skill Journey?</h2>
+                <p>Join thousands of people who are learning and teaching without limits!</p>
+                <button class="btn btn-white btn-lg">Create Free Account</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">🔄</span>
+                        <span class="logo-text">SkillSwap</span>
+                    </a>
+                    <p>Connecting learners and teachers through skill exchange. Learn without limits, teach without boundaries.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="#">How It Works</a></li>
+                            <li><a href="#">Browse Skills</a></li>
+                            <li><a href="#">Success Stories</a></li>
+                            <li><a href="#">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 SkillSwap. Made with ❤️ using AI for a better world.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Skill Detail Modal -->
+    <div class="modal" id="skillModal">
+        <div class="modal-content">
+            <span class="modal-close" id="skillModalClose">&times;</span>
+            <div class="modal-body" id="skillModalBody">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="modal-close" id="loginModalClose">&times;</span>
+            <div class="modal-body">
+                <h2>Welcome Back!</h2>
+                <p class="modal-subtitle">Login to continue your skill journey</p>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+                <p class="modal-footer-text">
+                    Don't have an account? <a href="#" id="switchToSignup">Sign up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <span class="modal-close" id="signupModalClose">&times;</span>
+            <div class="modal-body">
+                <h2>Join SkillSwap!</h2>
+                <p class="modal-subtitle">Create your free account</p>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" placeholder="Create a password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupSkills">Skills You Can Teach</label>
+                        <input type="text" id="signupSkills" placeholder="e.g., Python, Guitar, Cooking">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                </form>
+                <p class="modal-footer-text">
+                    Already have an account? <a href="#" id="switchToLogin">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="modal-close" id="contactModalClose">&times;</span>
+            <div class="modal-body">
+                <h2>Contact Teacher</h2>
+                <p class="modal-subtitle">Send a message to arrange your skill swap</p>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="contactName">Your Name</label>
+                        <input type="text" id="contactName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Your Email</label>
+                        <input type="email" id="contactEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" rows="4" placeholder="Write your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Favorites Panel -->
+    <div class="favorites-panel" id="favoritesPanel">
+        <div class="favorites-header">
+            <h3>❤️ Your Favorites</h3>
+            <span class="favorites-close" id="favoritesClose">&times;</span>
+        </div>
+        <div class="favorites-content" id="favoritesContent">
+            <p class="no-favorites">No favorites yet. Click on a skill card to add it to your favorites!</p>
+        </div>
+    </div>
+
+    <!-- User Dashboard Panel -->
+    <div class="dashboard-panel" id="dashboardPanel">
+        <div class="dashboard-header">
+            <h3>📊 Dashboard</h3>
+            <span class="dashboard-close" id="dashboardClose">&times;</span>
+        </div>
+        <div class="dashboard-nav">
+            <button class="dash-nav-btn active" data-tab="overview">Overview</button>
+            <button class="dash-nav-btn" data-tab="my-skills">My Skills</button>
+            <button class="dash-nav-btn" data-tab="swaps">My Swaps</button>
+            <button class="dash-nav-btn" data-tab="messages">Messages</button>
+            <button class="dash-nav-btn" data-tab="schedule">Schedule</button>
+            <button class="dash-nav-btn" data-tab="reviews">Reviews</button>
+            <button class="dash-nav-btn" data-tab="analytics">Analytics</button>
+            <button class="dash-nav-btn" data-tab="settings">Settings</button>
+        </div>
+        <div class="dashboard-content" id="dashboardContent">
+            <!-- Dynamic content based on selected tab -->
+        </div>
+    </div>
+
+    <!-- Messaging Panel -->
+    <div class="messaging-panel" id="messagingPanel">
+        <div class="messaging-header">
+            <h3>💬 Messages</h3>
+            <span class="messaging-close" id="messagingClose">&times;</span>
+        </div>
+        <div class="messaging-container">
+            <div class="conversations-list" id="conversationsList">
+                <!-- Conversations will be dynamically inserted -->
+            </div>
+            <div class="chat-area" id="chatArea">
+                <div class="chat-empty">
+                    <span>💬</span>
+                    <p>Select a conversation to start chatting</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div class="modal" id="profileModal">
+        <div class="modal-content modal-lg">
+            <span class="modal-close" id="profileModalClose">&times;</span>
+            <div class="profile-modal-body" id="profileModalBody">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Swap Modal -->
+    <div class="modal" id="scheduleModal">
+        <div class="modal-content">
+            <span class="modal-close" id="scheduleModalClose">&times;</span>
+            <div class="modal-body">
+                <h2>📅 Schedule a Swap</h2>
+                <p class="modal-subtitle">Choose a date and time for your skill exchange</p>
+                <form id="scheduleForm">
+                    <div class="form-group">
+                        <label for="scheduleDate">Select Date</label>
+                        <input type="date" id="scheduleDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="scheduleTime">Select Time</label>
+                        <input type="time" id="scheduleTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="scheduleType">Session Type</label>
+                        <select id="scheduleType" required>
+                            <option value="">Choose session type</option>
+                            <option value="video">📹 Video Call</option>
+                            <option value="chat">💬 Text Chat</option>
+                            <option value="in-person">🏠 In Person</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="scheduleNotes">Notes (Optional)</label>
+                        <textarea id="scheduleNotes" rows="3" placeholder="Any special requests or topics you'd like to cover..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">📅 Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="modal" id="reviewModal">
+        <div class="modal-content">
+            <span class="modal-close" id="reviewModalClose">&times;</span>
+            <div class="modal-body">
+                <h2>⭐ Leave a Review</h2>
+                <p class="modal-subtitle">Share your experience with this skill swap</p>
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <div class="star-rating" id="starRating">
+                            <span class="star" data-rating="1">⭐</span>
+                            <span class="star" data-rating="2">⭐</span>
+                            <span class="star" data-rating="3">⭐</span>
+                            <span class="star" data-rating="4">⭐</span>
+                            <span class="star" data-rating="5">⭐</span>
+                        </div>
+                        <input type="hidden" id="reviewRating" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewTitle">Review Title</label>
+                        <input type="text" id="reviewTitle" placeholder="Summarize your experience" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewText">Your Review</label>
+                        <textarea id="reviewText" rows="4" placeholder="Share details about your skill swap experience..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Skill Modal -->
+    <div class="modal" id="addSkillModal">
+        <div class="modal-content">
+            <span class="modal-close" id="addSkillModalClose">&times;</span>
+            <div class="modal-body">
+                <h2>➕ Add New Skill</h2>
+                <p class="modal-subtitle">Share your knowledge with the community</p>
+                <form id="addSkillForm">
+                    <div class="form-group">
+                        <label for="skillTitle">Skill Title</label>
+                        <input type="text" id="skillTitle" placeholder="e.g., Python Programming" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="skillCategory">Category</label>
+                        <select id="skillCategory" required>
+                            <option value="">Select category</option>
+                            <option value="music">🎵 Music</option>
+                            <option value="tech">💻 Technology</option>
+                            <option value="cooking">🍳 Cooking</option>
+                            <option value="art">🎨 Art & Design</option>
+                            <option value="fitness">💪 Fitness</option>
+                            <option value="language">🌍 Languages</option>
+                            <option value="business">💼 Business</option>
+                            <option value="photography">📷 Photography</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="skillLevel">Skill Level</label>
+                        <select id="skillLevel" required>
+                            <option value="">Select level</option>
+                            <option value="beginner">🌱 Beginner</option>
+                            <option value="intermediate">🌿 Intermediate</option>
+                            <option value="advanced">🌳 Advanced</option>
+                            <option value="expert">⭐ Expert</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="skillDescription">Description</label>
+                        <textarea id="skillDescription" rows="3" placeholder="Describe what you can teach and what you're looking to learn in return..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="skillWanted">What You Want to Learn</label>
+                        <input type="text" id="skillWanted" placeholder="e.g., Guitar, Photography, Spanish">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">➕ Add Skill</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Call Modal -->
+    <div class="modal" id="videoCallModal">
+        <div class="modal-content modal-lg">
+            <span class="modal-close" id="videoCallModalClose">&times;</span>
+            <div class="modal-body">
+                <h2>📹 Video Call</h2>
+                <div class="video-call-container">
+                    <div class="video-grid">
+                        <div class="video-main">
+                            <div class="video-placeholder">
+                                <span>👤</span>
+                                <p>Waiting for participant...</p>
+                            </div>
+                        </div>
+                        <div class="video-self">
+                            <div class="video-placeholder small">
+                                <span>👤</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-controls">
+                        <button class="video-btn" id="toggleMic" title="Toggle Microphone">🎤</button>
+                        <button class="video-btn" id="toggleCamera" title="Toggle Camera">📷</button>
+                        <button class="video-btn" id="shareScreen" title="Share Screen">🖥️</button>
+                        <button class="video-btn video-btn-end" id="endCall" title="End Call">📞</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forum Section -->
+    <section id="forum" class="section forum-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">💬 Community Forum</h2>
+                <p class="section-subtitle">Connect with other skill swappers, ask questions, and share knowledge</p>
+            </div>
+            
+            <div class="forum-controls">
+                <button class="btn btn-primary" id="newPostBtn">➕ New Post</button>
+                <div class="forum-filters">
+                    <button class="filter-btn active" data-forum-category="all">All</button>
+                    <button class="filter-btn" data-forum-category="general">General</button>
+                    <button class="filter-btn" data-forum-category="help">Help</button>
+                    <button class="filter-btn" data-forum-category="tips">Tips</button>
+                    <button class="filter-btn" data-forum-category="success">Success Stories</button>
+                </div>
+            </div>
+
+            <div class="forum-posts" id="forumPosts">
+                <!-- Forum posts will be dynamically inserted -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section blog-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">📚 SkillSwap Blog</h2>
+                <p class="section-subtitle">Tips, tutorials, and stories from our community</p>
+            </div>
+            
+            <div class="blog-grid" id="blogGrid">
+                <!-- Blog posts will be dynamically inserted -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Section -->
+    <section id="analytics" class="section analytics-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">📊 Your Analytics</h2>
+                <p class="section-subtitle">Track your skill swapping progress</p>
+            </div>
+            
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <div class="analytics-icon">🔄</div>
+                    <div class="analytics-data">
+                        <span class="analytics-number" id="totalSwaps">0</span>
+                        <span class="analytics-label">Total Swaps</span>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-icon">⭐</div>
+                    <div class="analytics-data">
+                        <span class="analytics-number" id="avgRating">0.0</span>
+                        <span class="analytics-label">Average Rating</span>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-icon">👥</div>
+                    <div class="analytics-data">
+                        <span class="analytics-number" id="totalConnections">0</span>
+                        <span class="analytics-label">Connections</span>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-icon">⏱️</div>
+                    <div class="analytics-data">
+                        <span class="analytics-number" id="hoursLearned">0</span>
+                        <span class="analytics-label">Hours Learned</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analytics-charts">
+                <div class="chart-card">
+                    <h3>Skills Distribution</h3>
+                    <div class="chart-placeholder" id="skillsChart">
+                        <div class="chart-bar" style="height: 80%;"><span>Tech</span></div>
+                        <div class="chart-bar" style="height: 60%;"><span>Music</span></div>
+                        <div class="chart-bar" style="height: 45%;"><span>Art</span></div>
+                        <div class="chart-bar" style="height: 35%;"><span>Fit</span></div>
+                        <div class="chart-bar" style="height: 25%;"><span>Lang</span></div>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Monthly Progress</h3>
+                    <div class="chart-placeholder" id="progressChart">
+                        <div class="chart-bar" style="height: 30%;"><span>Jan</span></div>
+                        <div class="chart-bar" style="height: 45%;"><span>Feb</span></div>
+                        <div class="chart-bar" style="height: 60%;"><span>Mar</span></div>
+                        <div class="chart-bar" style="height: 75%;"><span>Apr</span></div>
+                        <div class="chart-bar" style="height: 90%;"><span>May</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Recommendations Section -->
+    <section id="recommendations" class="section recommendations-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🤖 AI Recommendations</h2>
+                <p class="section-subtitle">Personalized skill matches based on your profile and preferences</p>
+            </div>
+            
+            <div class="recommendations-grid" id="recommendationsGrid">
+                <!-- AI recommendations will be dynamically inserted -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content modal-lg">
+            <span class="modal-close" id="settingsModalClose">&times;</span>
+            <div class="modal-body">
+                <h2>⚙️ Account Settings</h2>
+                <form id="settingsForm">
+                    <div class="settings-tabs">
+                        <button type="button" class="settings-tab active" data-settings-tab="profile">Profile</button>
+                        <button type="button" class="settings-tab" data-settings-tab="account">Account</button>
+                        <button type="button" class="settings-tab" data-settings-tab="notifications">Notifications</button>
+                        <button type="button" class="settings-tab" data-settings-tab="privacy">Privacy</button>
+                    </div>
+                    
+                    <div class="settings-content" id="settingsProfile">
+                        <div class="form-group">
+                            <label for="settingsAvatar">Profile Picture</label>
+                            <div class="avatar-upload">
+                                <div class="avatar-preview" id="avatarPreview">👤</div>
+                                <input type="file" id="settingsAvatar" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="settingsName">Full Name</label>
+                            <input type="text" id="settingsName" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="settingsBio">Bio</label>
+                            <textarea id="settingsBio" rows="3" placeholder="Tell others about yourself..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="settingsLocation">Location</label>
+                            <input type="text" id="settingsLocation" placeholder="City, Country">
+                        </div>
+                        <div class="form-group">
+                            <label for="settingsLanguages">Languages</label>
+                            <input type="text" id="settingsLanguages" placeholder="English, Spanish, French...">
+                        </div>
+                    </div>
+
+                    <div class="settings-content" id="settingsAccount" style="display: none;">
+                        <div class="form-group">
+                            <label for="settingsEmail">Email</label>
+                            <input type="email" id="settingsEmail" placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="settingsPassword">New Password</label>
+                            <input type="password" id="settingsPassword" placeholder="Enter new password">
+                        </div>
+                        <div class="form-group">
+                            <label for="settingsConfirmPassword">Confirm Password</label>
+                            <input type="password" id="settingsConfirmPassword" placeholder="Confirm new password">
+                        </div>
+                    </div>
+
+                    <div class="settings-content" id="settingsNotifications" style="display: none;">
+                        <div class="notification-option">
+                            <label>
+                                <input type="checkbox" id="notifEmail" checked>
+                                Email notifications for new messages
+                            </label>
+                        </div>
+                        <div class="notification-option">
+                            <label>
+                                <input type="checkbox" id="notifSwap" checked>
+                                Notifications for swap requests
+                            </label>
+                        </div>
+                        <div class="notification-option">
+                            <label>
+                                <input type="checkbox" id="notifReview" checked>
+                                Notifications for new reviews
+                            </label>
+                        </div>
+                        <div class="notification-option">
+                            <label>
+                                <input type="checkbox" id="notifNewsletter">
+                                Weekly newsletter
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-content" id="settingsPrivacy" style="display: none;">
+                        <div class="notification-option">
+                            <label>
+                                <input type="checkbox" id="profilePublic" checked>
+                                Make my profile public
+                            </label>
+                        </div>
+                        <div class="notification-option">
+                            <label>
+                                <input type="checkbox" id="showEmail">
+                                Show my email on profile
+                            </label>
+                        </div>
+                        <div class="notification-option">
+                            <label>
+                                <input type="checkbox" id="showLocation">
+                                Show my location
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">💾 Save Settings</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifications Panel -->
+    <div class="notifications-panel" id="notificationsPanel">
+        <div class="notifications-header">
+            <h3>🔔 Notifications</h3>
+            <span class="notifications-close" id="notificationsClose">&times;</span>
+        </div>
+        <div class="notifications-list" id="notificationsList">
+            <p class="no-notifications">No notifications yet!</p>
+        </div>
+    </div>
+
+    <!-- New Post Modal -->
+    <div class="modal" id="newPostModal">
+        <div class="modal-content">
+            <span class="modal-close" id="newPostModalClose">&times;</span>
+            <div class="modal-body">
+                <h2>➕ Create New Post</h2>
+                <p class="modal-subtitle">Share with the community</p>
+                <form id="newPostForm">
+                    <div class="form-group">
+                        <label for="postTitle">Title</label>
+                        <input type="text" id="postTitle" placeholder="What's on your mind?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postCategory">Category</label>
+                        <select id="postCategory" required>
+                            <option value="general">💬 General</option>
+                            <option value="help">❓ Help</option>
+                            <option value="tips">💡 Tips</option>
+                            <option value="success">🎉 Success Stories</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="postContent">Content</label>
+                        <textarea id="postContent" rows="5" placeholder="Share your thoughts, questions, or experiences..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">📤 Publish Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
